@@ -1,4 +1,15 @@
 ---
+import "../styles/global.css";
+const pageTitle = "About Me";
+
+const identity = {
+  firstName: "Serra",
+  location: "Pacific NorthWest",
+  occupation: "Freelance Web Developer",
+  hobbies: ["Computer Hacking", "Upcycling", "Mountain Biking", "Podcasts"],
+};
+
+const skills = ["Technical Support", "React", "REST APIs", "Trouble Shooting"];
 ---
 
 <html lang="en">
@@ -8,14 +19,29 @@
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
     <a href="/">Home</a>
     <a href="/about/">About</a>
     <a href="/blog/">Blog</a>
 
-    <h1>tekno boten</h1>
+    <h1>{pageTitle}</h1>
 
-    <p>Livejournal was the only social network I ever wanted.</p>
+    <p>
+      Hi! My name is {identity.firstName}. I live in the {identity.location} and
+      I work as a {identity.occupation}.
+    </p>
   </body>
+
+  {
+    identity.hobbies.length >= 2 && (
+      <p>
+        Some of my hobbies include: {identity.hobbies[0]}, {identity.hobbies[2]}
+        , {identity.hobbies[3]}, and {identity.hobbies[1]}
+      </p>
+    )
+  }
+  <p>My skills include but are not limited to:</p>
+  <ul>{skills.map((skill) => <li>{skill}</li>)}</ul>
 </html>
