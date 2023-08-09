@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 const astroboten = "About Me";
 ---
 
@@ -12,12 +14,10 @@ const astroboten = "About Me";
     <title>{astroboten}</title>
   </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
-
+    <Navigation />
     <h1>astroboten</h1>
 
     <p>i can't get over how weird it feels to write content in HTML</p>
+    <Footer />
   </body>
 </html>

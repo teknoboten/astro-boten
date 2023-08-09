@@ -1,10 +1,12 @@
 ---
 import "../styles/global.css";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 const pageTitle = "About Me";
 
 const identity = {
-  firstName: "Serra",
   location: "Pacific NorthWest",
+  firstName: "Serra",
   occupation: "Freelance Web Developer",
   hobbies: ["Computer Hacking", "Upcycling", "Mountain Biking", "Podcasts"],
 };
@@ -22,9 +24,7 @@ const skills = ["Technical Support", "React", "REST APIs", "Trouble Shooting"];
     <title>{pageTitle}</title>
   </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
+    <Navigation />
 
     <h1>{pageTitle}</h1>
 
@@ -44,4 +44,6 @@ const skills = ["Technical Support", "React", "REST APIs", "Trouble Shooting"];
   }
   <p>My skills include but are not limited to:</p>
   <ul>{skills.map((skill) => <li>{skill}</li>)}</ul>
+
+  <Footer />
 </html>
