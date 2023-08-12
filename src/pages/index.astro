@@ -1,8 +1,8 @@
 ---
 import "../styles/global.css";
-import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
-const astroboten = "About Me";
+import Header from "../components/Header.astro";
+const pageTitle = "Hello, World";
 ---
 
 <html lang="en">
@@ -11,13 +11,14 @@ const astroboten = "About Me";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{astroboten}</title>
+    <title>astroboten</title>
   </head>
   <body>
-    <Navigation />
-    <h1>astroboten</h1>
-
-    <p>i can't get over how weird it feels to write content in HTML</p>
+    <Header />
+    <h1>{pageTitle}</h1>
     <Footer />
+    <script>
+      import "../scripts/menu.js";
+    </script>
   </body>
 </html>

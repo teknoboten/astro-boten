@@ -1,7 +1,8 @@
 ---
 import "../styles/global.css";
-import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+
 const pageTitle = "About Me";
 
 const identity = {
@@ -10,8 +11,7 @@ const identity = {
   occupation: "Freelance Web Developer",
   hobbies: ["Computer Hacking", "Upcycling", "Mountain Biking", "Podcasts"],
 };
-
-const skills = ["Technical Support", "React", "REST APIs", "Trouble Shooting"];
+const skills = ["Technical Support", "React", "REST APIs", "Troubleshooting"];
 ---
 
 <html lang="en">
@@ -20,30 +20,31 @@ const skills = ["Technical Support", "React", "REST APIs", "Trouble Shooting"];
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-    <title>{pageTitle}</title>
+    <title>astroboten</title>
   </head>
+  <Header />
   <body>
-    <Navigation />
-
     <h1>{pageTitle}</h1>
 
     <p>
       Hi! My name is {identity.firstName}. I live in the {identity.location} and
       I work as a {identity.occupation}.
     </p>
+    {
+      identity.hobbies.length >= 2 && (
+        <p>
+          Some of my hobbies include: {identity.hobbies[0]},{" "}
+          {identity.hobbies[2]}, {identity.hobbies[3]}, and{" "}
+          {identity.hobbies[1]}
+        </p>
+      )
+    }
+    <p>My skills include but are not limited to:</p>
+    <ul>{skills.map((skill) => <li>{skill}</li>)}</ul>
+
+    <Footer />
+    <script>
+      import "../scripts/menu.js";
+    </script>
   </body>
-
-  {
-    identity.hobbies.length >= 2 && (
-      <p>
-        Some of my hobbies include: {identity.hobbies[0]}, {identity.hobbies[2]}
-        , {identity.hobbies[3]}, and {identity.hobbies[1]}
-      </p>
-    )
-  }
-  <p>My skills include but are not limited to:</p>
-  <ul>{skills.map((skill) => <li>{skill}</li>)}</ul>
-
-  <Footer />
 </html>
