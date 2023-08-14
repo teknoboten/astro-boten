@@ -1,5 +1,6 @@
 ---
-title: "welcome to my wwwwwebsite"
+layout: ../../layouts/MarkdownPostLayout.astro
+title: "Hello, World"
 pubDate: 2022-07-01
 description: "This is the first post of my new Astro blog."
 author: "serra boten"
@@ -8,10 +9,6 @@ image:
   alt: "The full Astro logo."
 tags: ["astro", "blogging", "learning in public"]
 ---
-
-# Hello, World
-
-Published on: 2022-07-01
 
 So I have decided to try and find an actual job working with people again! I am very excited about this idea but job hunting - after being "mommy tracked" for a few more years than anticipated, and also during a "recession" where A.I. is coming to take all the jorbs - is the worst.
 

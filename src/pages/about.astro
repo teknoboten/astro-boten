@@ -1,10 +1,8 @@
 ---
 import "../styles/global.css";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "About Me";
-
 const identity = {
   location: "Pacific NorthWest",
   firstName: "Serra",
@@ -14,37 +12,19 @@ const identity = {
 const skills = ["Technical Support", "React", "REST APIs", "Troubleshooting"];
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>astroboten</title>
-  </head>
-  <Header />
-  <body>
-    <h1>{pageTitle}</h1>
-
-    <p>
-      Hi! My name is {identity.firstName}. I live in the {identity.location} and
-      I work as a {identity.occupation}.
-    </p>
-    {
-      identity.hobbies.length >= 2 && (
-        <p>
-          Some of my hobbies include: {identity.hobbies[0]},{" "}
-          {identity.hobbies[2]}, {identity.hobbies[3]}, and{" "}
-          {identity.hobbies[1]}
-        </p>
-      )
-    }
-    <p>My skills include but are not limited to:</p>
-    <ul>{skills.map((skill) => <li>{skill}</li>)}</ul>
-
-    <Footer />
-    <script>
-      import "../scripts/menu.js";
-    </script>
-  </body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  <p>
+    Hi! My name is {identity.firstName}. I live in the {identity.location} and I
+    work as a {identity.occupation}.
+  </p>
+  {
+    identity.hobbies.length >= 2 && (
+      <p>
+        Some of my hobbies include: {identity.hobbies[0]}, {identity.hobbies[2]}
+        , {identity.hobbies[3]}, and {identity.hobbies[1]}
+      </p>
+    )
+  }
+  <p>My skills include but are not limited to:</p>
+  <ul>{skills.map((skill) => <li>{skill}</li>)}</ul>
+</BaseLayout>
