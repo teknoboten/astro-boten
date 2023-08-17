@@ -1,9 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Greeting from "../components/Greeting";
+import Recent from "../components/Recent.astro";
+
+import Tags from "../components/Tags.astro";
+
 const pageTitle = "Astro Boten";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+  <Recent />
+  <Tags />
 </BaseLayout>
