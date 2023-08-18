@@ -1,7 +1,9 @@
 ---
-import "../styles/global.css";
+// import "../styles/global.css";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import Recent from "../components/Recent.astro";
+import Container from "../components/Container.astro";
 const { pageTitle } = Astro.props;
 ---
 
@@ -14,11 +16,10 @@ const { pageTitle } = Astro.props;
     <title>astroboten</title>
   </head>
   <body>
-    <Header />
-    <slot />
-    <Footer />
-    <script>
-      import "../scripts/menu.js";
-    </script>
+    <div class="max-w-md mx-auto rounded-xl overflow-hidden md:max-w-2xl mt-9">
+      <Header />
+      <slot />
+      <Footer />
+    </div>
   </body>
 </html>
