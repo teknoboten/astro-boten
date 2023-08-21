@@ -1,14 +1,14 @@
 ---
 import Container from "./Container.astro";
-// import BlogPost from "./BlogPost.astro";
 import Snippet from "./Snippet.astro";
+import Heading from "./Heading.astro";
 
 const allPosts = await Astro.glob("../pages/posts/*.md");
 ---
 
 <Container>
   <div class="p-1">
-    <h1 class="text-2xl">Recent Posts</h1>
+    <Heading heading="Recently Noted" />
 
     <ul>
       {

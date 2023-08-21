@@ -3,7 +3,7 @@
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Recent from "../components/Recent.astro";
-import Container from "../components/Container.astro";
+// import Container from "../components/Container.astro";
 const { pageTitle } = Astro.props;
 ---
 
@@ -14,12 +14,55 @@ const { pageTitle } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>astroboten</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="max-w-md mx-auto rounded-xl overflow-hidden md:max-w-2xl mt-9">
-      <Header />
-      <slot />
-      <Footer />
+    <div class="gradient-background">
+      <div
+        class="min-h-screen flex flex-col justify-center relative overflow-hidden sm:py-12"
+      >
+        <div class="p-4 rounded mx-auto">
+          <Header />
+          <slot />
+          <Footer />
+        </div>
+      </div>
     </div>
   </body>
 </html>
+
+<style>
+  .gradient-background {
+    background: linear-gradient(
+      100deg,
+      #ffebeb,
+      #fff6eb,
+      #feffeb,
+      #eeffeb,
+      #ebfdff,
+      #ebf2ff,
+      #ffebff,
+      #eeebff,
+      #fffffc
+    );
+    background-size: 180% 180%;
+    animation: gradient-animation 20s ease infinite;
+  }
+
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+</style>
