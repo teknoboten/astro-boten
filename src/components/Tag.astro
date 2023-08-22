@@ -1,7 +1,24 @@
 ---
-const { tag } = Astro.props;
+const { tag, large } = Astro.props;
 ---
 
-<span class="bg-red-100 mr-1 p-1">
-  <a href={`/tags/${tag}`}>{tag}</a>
-</span>
+<a href={`/tags/${tag}`} class={`tag` + (large ? ` large` : ``)}>{tag}</a>
+
+<style>
+  .tag {
+    color: #000;
+    text-decoration: none;
+    text-transform: lowercase;
+    display: inline-block;
+    border: 1px solid #222;
+    margin-right: 0.5em;
+    font-family: var(--mono-font);
+    font-size: 0.9em;
+    padding: 0 0.2em 0;
+  }
+
+  .tag.large {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+  }
+</style>
