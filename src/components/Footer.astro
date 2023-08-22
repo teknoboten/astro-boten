@@ -1,5 +1,16 @@
 ---
 import Section from "./Section.astro";
+import Heading from "./Heading.astro";
 ---
 
-<Section><div>this is the end of the page</div></Section>
+<Section>
+  <p>© {new Date().getFullYear()} Serra Boten</p>
+</Section>
+
+<style>
+  p {
+    margin-top: 5rem;
+    text-align: center;
+    color: grey;
+  }
+</style>

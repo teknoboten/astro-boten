@@ -3,9 +3,17 @@ import Section from "./Section.astro";
 import Heading from "./Heading.astro";
 ---
 
-<h1>Serra Boten</h1>
-<p>some stuff about me goes here</p>
+<Section>
+  <h1>Serra Boten</h1>
 
+  <p class="bio">
+    Hello, World! My name is Serra and this is my Digital Garden. Here you will
+    find my writing about code, technology, projects and my post-social-media
+    life as a parent and aging Millenial.🪴🌺
+  </p>
+
+  <!-- <a href="#"> All Notes</a> -->
+</Section>
 <style>
   h1 {
     font-family: "Space Grotesk", sans-serif;
@@ -14,11 +22,15 @@ import Heading from "./Heading.astro";
     width: 6ch;
     text-align: center;
     line-height: 0.75;
-    margin: 0 auto;
-    margin-top: 1.5em;
+    margin: 1.5em auto 0.6em;
   }
 
-  p {
-    text-align: center;
+  .bio {
+    text-align: justify;
+    font-size: 1rem;
+    font-family: var(--mono-font);
+    max-width: 60ch;
+    margin: 5rem auto;
+    display: block;
   }
 </style>

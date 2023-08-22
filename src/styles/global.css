@@ -21,7 +21,7 @@ body {
 :root {
   --mono-font: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
     monospace;
-  --quote-font: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
+  /* --quote-font: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif; */
 }
 
 ul {
