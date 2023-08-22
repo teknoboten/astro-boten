@@ -1,26 +1,31 @@
 ---
-import Container from "./Container.astro";
-import Snippet from "./Snippet.astro";
+import Section from "./Section.astro";
+// import Snippet from "./Snippet.astro";
+import RecentListItem from "./RecentListItem.astro";
 import Heading from "./Heading.astro";
 
 const allPosts = await Astro.glob("../pages/posts/*.md");
 ---
 
-<Container>
-  <div class="p-1">
-    <Heading heading="Recently Noted" />
+<Section>
+  <Heading heading="Recently Noted" />
 
-    <ul>
-      {
-        allPosts.map((post) => (
-          <Snippet
-            url={post.url}
-            title={post.frontmatter.title}
-            pubDate={post.frontmatter.pubDate}
-            tags={post.frontmatter.tags}
-          />
-        ))
-      }
-    </ul>
-  </div>
-</Container>
+  <ul role="list">
+    {
+      allPosts.map((post) => (
+        <RecentListItem
+          url={post.url}
+          title={post.frontmatter.title}
+          pubDate={post.frontmatter.pubDate}
+          tags={post.frontmatter.tags}
+        />
+      ))
+    }
+  </ul>
+</Section>
+
+<style>
+  ul {
+    padding: 0;
+  }
+</style>

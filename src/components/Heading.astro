@@ -2,11 +2,16 @@
 const { heading } = Astro.props;
 ---
 
-<p class="heading mt-6">{heading}</p>
+<h2>{heading}</h2>
 
 <style>
   .heading {
     font-family: "Space Grotesk", sans-serif;
-    font-size: 1.4em;
+    font-size: 60px;
+    width: 6ch;
+    text-align: center;
+    line-height: 0.75;
+    margin: 0 auto;
+    margin-top: 1.5em;
   }
 </style>
