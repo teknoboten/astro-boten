@@ -1,9 +1,8 @@
 ---
-// import "../styles/global.css";
+import "../styles/global.css";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Recent from "../components/Recent.astro";
-// import Container from "../components/Container.astro";
 const { pageTitle } = Astro.props;
 ---
 
@@ -17,27 +16,19 @@ const { pageTitle } = Astro.props;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Space+Grotesk:wght@500&display=swap"
       rel="stylesheet"
     />
   </head>
-  <body>
-    <div class="gradient-background">
-      <div
-        class="min-h-screen flex flex-col justify-center relative overflow-hidden sm:py-12"
-      >
-        <div class="p-4 rounded mx-auto">
-          <Header />
-          <slot />
-          <Footer />
-        </div>
-      </div>
-    </div>
+  <body class="gradient-background">
+    <Header />
+    <slot />
+    <Footer />
   </body>
 </html>
 
 <style>
-  .gradient-background {
+  /* .gradient-background {
     background: linear-gradient(
       100deg,
       #ffebeb,
@@ -64,5 +55,5 @@ const { pageTitle } = Astro.props;
     100% {
       background-position: 0% 50%;
     }
-  }
+  } */
 </style>

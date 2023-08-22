@@ -1,0 +1,30 @@
+---
+const { url, pubDate, tags, title } = Astro.props;
+---
+
+<li>
+  <span class="date">{pubDate.slice(0, 10)}</span>
+  <a href={url} class="title">{title}</a>
+</li>
+
+<style>
+  .date {
+    display: block;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    font-family: var(--mono-font);
+  }
+
+  .title {
+    font-family: "Indie Flower", cursive;
+    font-size: 2.1em;
+    color: black;
+    display: block;
+  }
+
+  li {
+    margin-bottom: 1.2em;
+    list-style: none;
+    display: block;
+  }
+</style>

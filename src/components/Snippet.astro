@@ -1,25 +1,21 @@
 ---
-// import Container from "./Container.astro";
 const { url, pubDate, tags, title } = Astro.props;
-
 ---
-
-  <!-- <div class="h-50 p-4 my-4 bg-gradient-to-br rounded from-teal-100 to-pink-100"> -->
-  <div class="h-50 p-4 my-4 rounded">
-
-
-  <p>{pubDate.slice(0,10)}</p>
-  <li>
+    <li>
+      <div>
+    <p>{pubDate.slice(0,10)}</p>
     <a class="text-true-gray-900 text-2xl font-bold py-2" href={url}>{title}</a>
-  </li>
-  <div class="py-1">
+    <ul>
+      <li>
     {
-      tags.map((tag) => (
-        <span="tag">
-          {" "}
-          <a href={`/tags/${tag}`}>{tag}</a>
-        </span>
+    tags.map((tag) => (
+      <span="tag">
+      {" "}
+      <a href={`/tags/${tag}`}>{tag}</a>
+      </span>
       ))
     }
-  </div>
+    </li>
+  </ul>
 </div>
+    </li>
