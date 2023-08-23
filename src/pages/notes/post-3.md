@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
+layout: ../../layouts/NoteLayout.astro
 title: "Hello Robots.txt"
 pubDate: 2022-07-03
 description: "How to disable OpenAI web crawler"

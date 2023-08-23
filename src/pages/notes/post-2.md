@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
+layout: ../../layouts/NoteLayout.astro
 title: "Me again"
 pubDate: 2022-07-02
 description: "Testing out tags and getStaticPaths"

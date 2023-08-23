@@ -1,0 +1,61 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Section.astro";
+import Heading from "../components/Heading.astro";
+import Tag from "../components/Tag.astro";
+import Sig from "../components/Sig.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout pageTitle={frontmatter.title}>
+  <Section>
+    <a href="/" class="back">← Back to Serra's Digital Garden</a>
+    <div class="noteHead">
+      <h3 class="title">{frontmatter.title}</h3>
+    </div>
+
+    <!-- to do: make date better for humans -->
+    <slot />
+    <Sig />
+    <div class="footer">
+      <span>Posted: {frontmatter.pubDate.slice(0, 10)}</span>
+      <span
+        >Tagged:
+        {
+          frontmatter.tags.map((tag) => (
+            <span class="tag">
+              <Tag tag={tag} />
+            </span>
+          ))
+        }
+      </span>
+    </div>
+  </Section>
+</BaseLayout>
+<style>
+  .back {
+    font-family: "Space Grotesk", sans-serif;
+  }
+  .tag {
+    display: inline-block;
+  }
+
+  .footer {
+    font-family: var(--mono-font);
+    margin: 1em 0;
+  }
+
+  span {
+    display: block;
+  }
+
+  .noteHead {
+    text-align: center;
+    padding: 2em 0;
+  }
+
+  .title {
+    display: inline;
+    font-size: 4em;
+  }
+</style>

@@ -1,6 +1,32 @@
 html {
   background-color: #f1f5f9;
   font-family: sans-serif;
+  background: linear-gradient(
+    100deg,
+    #ffebeb,
+    #fff6eb,
+    #feffeb,
+    #eeffeb,
+    #ebfdff,
+    #ebf2ff,
+    #ffebff,
+    #eeebff,
+    #fffffc
+  );
+  background-size: 180% 180%;
+  animation: gradient-animation 20s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 body {
@@ -28,13 +54,10 @@ ul {
   list-style: none;
 }
 
-h1 {
-  margin: 1rem 0;
-  font-size: 2.5rem;
-}
-
 a {
   text-decoration: none;
+  color: inherit;
+  font-weight: bold;
 }
 
 /* remove animations for accessibility */
@@ -52,11 +75,16 @@ a {
   }
 }
 
-h1,
-h3 {
+h1 {
   font-family: "Space Grotesk", sans-serif;
+  font-size: 2.5em;
 }
 
-h1 {
-  font-size: 2.4em;
+h3 {
+  font-family: "Indie Flower", cursive;
+  font-size: 2.2em;
+}
+
+h2 {
+  font-family: "Space Grotesk", sans-serif;
 }
