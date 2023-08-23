@@ -1,0 +1,27 @@
+---
+import Section from "../components/Section.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Heading from "../components/Heading.astro";
+import RecentListItem from "../components/RecentListItem.astro";
+const allNotes = await Astro.glob("./notes/*.md");
+---
+
+<BaseLayout>
+  <Section>
+    <Header page="notes" />
+
+    <ul role="list">
+      {
+        allNotes.map((note) => (
+          <RecentListItem
+            url={note.url}
+            title={note.frontmatter.title}
+            pubDate={note.frontmatter.pubDate}
+            tags={note.frontmatter.tags}
+          />
+        ))
+      }
+    </ul>
+  </Section>
+</BaseLayout>

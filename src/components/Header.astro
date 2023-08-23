@@ -1,27 +1,45 @@
 ---
 import Section from "./Section.astro";
 import Heading from "./Heading.astro";
+
+const { page } = Astro.props;
 ---
 
 <Section>
-  <h1>Serra Boten</h1>
+  <div class="header">
+    {
+      page === "home" && (
+        <>
+          <h1>Serra Boten</h1>
+          <p class="bio">
+            Hello, World! My name is Serra and this is my Digital Garden. Here
+            you will find my writing about code, technology, projects and my
+            post-social-media life as a parent and aging Millenial.🪴🌺
+          </p>
+        </>
+      )
+    }
 
-  <p class="bio">
-    Hello, World! My name is Serra and this is my Digital Garden. Here you will
-    find my writing about code, technology, projects and my post-social-media
-    life as a parent and aging Millenial.🪴🌺
-  </p>
-
-  <!-- <a href="#"> All Notes</a> -->
+    {page === "notes" && <h3>Notes</h3>}
+  </div>
 </Section>
+
 <style>
+  .header {
+    text-align: center;
+    padding: 2em 0;
+  }
+
   h1 {
-    font-family: "Space Grotesk", sans-serif;
     font-weight: 900;
     font-size: 100px;
     width: 6ch;
-    text-align: center;
     line-height: 0.75;
+    margin: 1.5em auto 0.6em;
+  }
+
+  h3 {
+    font-size: 100px;
     margin: 1.5em auto 0.6em;
   }
 
