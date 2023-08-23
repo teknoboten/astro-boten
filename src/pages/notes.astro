@@ -1,0 +1,25 @@
+---
+import NoteLayout from "../layouts/NoteLayout.astro";
+
+import RecentListItem from "../components/RecentListItem.astro";
+const allNotes = await Astro.glob("./notes/*.md");
+---
+
+<NoteLayout>
+  <Section>
+    <Heading heading="All Notes" />
+
+    <ul role="list">
+      {
+        allNotes.map((note) => (
+          <RecentListItem
+            url={note.url}
+            title={note.frontmatter.title}
+            pubDate={note.frontmatter.pubDate}
+            tags={note.frontmatter.tags}
+          />
+        ))
+      }
+    </ul>
+  </Section>
+</NoteLayout>

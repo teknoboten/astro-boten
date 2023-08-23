@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Recent from "../components/Recent.astro";
+import Header from "../components/Header.astro";
 
 import Tags from "../components/Tags.astro";
 
@@ -8,6 +9,7 @@ const pageTitle = "Astro Boten";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
+  <Header />
   <Recent />
   <Tags />
 </BaseLayout>
