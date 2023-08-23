@@ -10,7 +10,7 @@ const { page } = Astro.props;
     {
       page === "home" && (
         <>
-          <h1>Serra Boten</h1>
+          <p class="sb">Serra Boten</p>
           <p class="bio">
             Hello, World! My name is Serra and this is my Digital Garden. Here
             you will find my writing about code, technology, projects and my
@@ -27,15 +27,15 @@ const { page } = Astro.props;
 <style>
   .header {
     text-align: center;
-    padding: 2em 0;
+    margin-top: 6em;
   }
 
-  h1 {
+  .sb {
     font-weight: 900;
     font-size: 100px;
     width: 6ch;
     line-height: 0.75;
-    margin: 1.5em auto 0.6em;
+    margin: 1em auto 0.6em;
   }
 
   h3 {
