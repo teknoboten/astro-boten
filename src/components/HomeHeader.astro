@@ -1,0 +1,45 @@
+---
+import Button from "./Button.astro";
+import Section from "./Section.astro";
+---
+
+<Section>
+  <h1 class="sb">Serra Boten</h1>
+  <p class="bio">
+    Hello, World! My name is Serra and this is my Digital Garden. Here you will
+    find my writing about code, technology, projects and my post-social-media
+    life as a parent and aging Millenial.🪴🌺
+  </p>
+  <p>
+    <a href="/notes" class="button">Read all the notes</a>&nbsp;
+    <a href="/rss" class="button">RSS?</a>
+  </p>
+</Section>
+<style>
+  .sb {
+    font-weight: 900;
+    font-size: 100px;
+    width: 6ch;
+    line-height: 0.75;
+    margin: 1em auto 0.6em;
+    text-align: center;
+  }
+  .bio {
+    text-align: justify;
+    font-size: 1rem;
+    font-family: var(--mono-font);
+    max-width: 60ch;
+    margin: 5rem auto;
+    display: block;
+  }
+
+  .button {
+    display: inline;
+    border: 3px solid #222;
+    font-size: 1em;
+    width: 30ch;
+    padding: 0.2em 0.5em;
+    margin: 1rem auto;
+    font-family: var(--mono-font);
+  }
+</style>
