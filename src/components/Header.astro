@@ -1,6 +1,8 @@
 ---
 import Section from "./Section.astro";
 import Heading from "./Heading.astro";
+import Tag from "./Tag.astro";
+import Button from "../components/Button.astro";
 
 const { page } = Astro.props;
 ---
@@ -16,6 +18,10 @@ const { page } = Astro.props;
             you will find my writing about code, technology, projects and my
             post-social-media life as a parent and aging Millenial.🪴🌺
           </p>
+          <span class="buttons">
+            <Button text="Read all the notes" url="/notes" />
+            <Button text="RSS Feed?" url="/rss" />
+          </span>
         </>
       )
     }
@@ -26,8 +32,14 @@ const { page } = Astro.props;
 
 <style>
   .header {
-    text-align: center;
     margin-top: 6em;
+  }
+
+  .buttons {
+    display: flex;
+    width: 60ch;
+    justify-content: space-between;
+    margin: 5rem auto;
   }
 
   .sb {
@@ -36,11 +48,13 @@ const { page } = Astro.props;
     width: 6ch;
     line-height: 0.75;
     margin: 1em auto 0.6em;
+    text-align: center;
   }
 
   h3 {
     font-size: 100px;
     margin: 1.5em auto 0.6em;
+    text-align: center;
   }
 
   .bio {
