@@ -1,16 +1,18 @@
 ---
 import Section from "./Section.astro";
 import Heading from "./Heading.astro";
+const heart = "<3";
 ---
 
-<Section>
+<section>
+  <p>Built with {heart} and <a href="http://astro.build">Astro</a> 🚀</p>
   <p>© {new Date().getFullYear()} Serra Boten</p>
-</Section>
+</section>
 
 <style>
-  p {
-    margin-top: 5rem;
+  section {
+    font-family: var(--mono-font);
+    margin-top: 4rem;
     text-align: center;
-    color: grey;
   }
 </style>

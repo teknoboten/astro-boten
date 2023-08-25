@@ -29,25 +29,67 @@ html {
   }
 }
 
-body {
-  margin: 0 auto;
-  min-height: 100vh;
-  width: 100%;
-  max-width: 90ch;
-  padding: 1rem;
-  line-height: 1.5;
-  /* background-color: #a802f5; */
-  text-rendering: optimizeSpeed;
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-* {
-  box-sizing: border-box;
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-bottom: 0;
+}
+
+html {
+  background-color: #f1f5f9;
+  font-family: sans-serif;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
   --mono-font: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
     monospace;
-  /* --quote-font: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif; */
+  --cursive-font: "Indie Flower";
+  --sans-font: "Space Grotesk";
 }
 
 ul {
@@ -58,6 +100,34 @@ a {
   text-decoration: none;
   color: inherit;
   font-weight: bold;
+}
+
+h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 2.5em;
+}
+
+h3 {
+  font-family: "Indie Flower", cursive;
+  font-size: 2.2em;
+}
+
+h2 {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.container {
+  max-width: 75ch;
+  /* padding: 1em; */
+  margin: 0 auto;
+  min-height: 80vh;
+  /* background: white; */
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
 }
 
 /* remove animations for accessibility */
@@ -73,18 +143,4 @@ a {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-h1 {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 2.5em;
-}
-
-h3 {
-  font-family: "Indie Flower", cursive;
-  font-size: 2.2em;
-}
-
-h2 {
-  font-family: "Space Grotesk", sans-serif;
 }
