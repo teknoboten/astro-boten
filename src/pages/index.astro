@@ -1,23 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Recent from "../components/Recent.astro";
-import BaseHead from "../components/BaseHead.astro";
 import HomeHeader from "../components/HomeHeader.astro";
-
 import Tags from "../components/Tags.astro";
-
-const pageTitle = "Astro Boten";
 ---
 
-<html lang="en">
-  <head>
-    <BaseHead pageTitle={pageTitle} />
-  </head>
-
-  <body>
-    <BaseLayout page="home" HeaderComponent={HomeHeader}>
-      <Recent />
-      <Tags />
-    </BaseLayout>
-  </body>
-</html>
+<BaseLayout page="home">
+  <HomeHeader />
+  <Recent />
+  <Tags />
+</BaseLayout>

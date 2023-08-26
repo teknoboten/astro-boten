@@ -1,0 +1,44 @@
+---
+import Tag from "./Tag.astro";
+const { url, pubDate, tags, title } = Astro.props;
+---
+
+<li class="snippet">
+  <a href={url}>{title}</a>
+  <span class="date">{pubDate.slice(0, 10)}</span>
+  <!-- <span>
+    {
+      tags.map((tag) => (
+        <span class="tag">
+          <Tag tag={tag} />
+        </span>
+      ))
+    }
+  </span> -->
+</li>
+
+<style>
+  .tag {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+  .date {
+    /* display: block; */
+    /* letter-spacing: 1px; */
+    margin-left: 0.5em;
+    font-size: 0.7em;
+    font-family: var(--mono-font);
+  }
+
+  .snippet {
+    margin-bottom: 0.5em;
+    display: block;
+  }
+
+  ul {
+    /* list-style: none;
+    padding: 0;
+    display: inline-block;
+    margin-left: 0.2em; */
+  }
+</style>
