@@ -1,34 +1,33 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Recent from "../components/Recent.astro";
-import BaseHead from "../components/BaseHead.astro";
-import NotesHead from "../components/NotesHead.astro";
-import RecentListItem from "../components/RecentListItem.astro";
-
+import AllNotesListItem from "../components/AllNotesListItem.astro";
 import Tags from "../components/Tags.astro";
 const allNotes = await Astro.glob("./notes/*.md");
 const pageTitle = "Notes from the garden";
 ---
 
-<html lang="en">
-  <head>
-    <BaseHead pageTitle={pageTitle} />
-  </head>
+<BaseLayout page="home">
+  <h3>Notes from <a href="/">Serra Boten's Digital Garden</a></h3>
+  <ul role="list">
+    {
+      allNotes.map((note) => (
+        <AllNotesListItem
+          url={note.url}
+          title={note.frontmatter.title}
+          pubDate={note.frontmatter.pubDate}
+          tags={note.frontmatter.tags}
+        />
+      ))
+    }
+  </ul>
+</BaseLayout>
+<style>
+  h3 {
+    text-align: center;
+  }
 
-  <body>
-    <BaseLayout page="home" HeaderComponent={NotesHead}>
-      <ul role="list">
-        {
-          allNotes.map((note) => (
-            <RecentListItem
-              url={note.url}
-              title={note.frontmatter.title}
-              pubDate={note.frontmatter.pubDate}
-              tags={note.frontmatter.tags}
-            />
-          ))
-        }
-      </ul>
-    </BaseLayout>
-  </body>
-</html>
+  a {
+    text-decoration: solid underline 3px;
+  }
+</style>

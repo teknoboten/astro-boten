@@ -9,6 +9,7 @@ const allPosts = await Astro.glob("../pages/notes/*.md");
 <Section>
   <Heading heading="Recently Noted" />
 
+  <!-- to do: limit this once there are more than 5 posts! -->
   <ul role="list">
     {
       allPosts.map((post) => (

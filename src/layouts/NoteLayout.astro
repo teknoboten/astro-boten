@@ -4,23 +4,31 @@ import Section from "../components/Section.astro";
 import Heading from "../components/Heading.astro";
 import Tag from "../components/Tag.astro";
 import Sig from "../components/Sig.astro";
+import Back from "../components/Back.astro";
 const { frontmatter } = Astro.props;
+
+// make a human readable date
+const date = new Date(frontmatter.pubDate);
+const options = {
+  weekday: "long",
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+};
 ---
 
-<BaseLayout pageTitle={frontmatter.title}>
+<BaseLayout page="notes">
   <Section>
-    <a href="/" class="back">← Back to Serra's Digital Garden</a>
-    <div class="noteHead">
-      <h3 class="title">{frontmatter.title}</h3>
-    </div>
-
-    <!-- to do: make date better for humans -->
-    <slot />
-    <Sig />
-    <div class="footer">
-      <span>Posted: {frontmatter.pubDate.slice(0, 10)}</span>
-      <span
-        >Tagged:
+    <Back url="/notes" />
+    <div class="allNotes">
+      <div>
+        <h3>{frontmatter.title}</h3>
+        <span>{date.toLocaleDateString("en-us", options)}</span>
+      </div>
+      <slot />
+      <Sig />
+      <div class="footer">
+        Tagged:
         {
           frontmatter.tags.map((tag) => (
             <span class="tag">
@@ -28,13 +36,16 @@ const { frontmatter } = Astro.props;
             </span>
           ))
         }
-      </span>
+      </div>
     </div>
   </Section>
 </BaseLayout>
 <style>
-  .back {
-    font-family: "Space Grotesk", sans-serif;
+  .allNotes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 80vh;
   }
   .tag {
     display: inline-block;
@@ -42,20 +53,10 @@ const { frontmatter } = Astro.props;
 
   .footer {
     font-family: var(--mono-font);
-    margin: 1em 0;
+    margin-top: 1rem;
   }
 
   span {
     display: block;
-  }
-
-  .noteHead {
-    text-align: center;
-    padding: 2em 0;
-  }
-
-  .title {
-    display: inline;
-    font-size: 4em;
   }
 </style>
