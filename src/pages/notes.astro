@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Recent from "../components/Recent.astro";
+import PageHeader from "../components/PageHeader.astro";
 import AllNotesListItem from "../components/AllNotesListItem.astro";
 import Tags from "../components/Tags.astro";
 const allNotes = await Astro.glob("./notes/*.md");
@@ -8,7 +9,7 @@ const pageTitle = "Notes from the garden";
 ---
 
 <BaseLayout page="home">
-  <h3>Notes from <a href="/">Serra Boten's Digital Garden</a></h3>
+  <PageHeader url="/" title={pageTitle} />
   <ul role="list">
     {
       allNotes.map((note) => (

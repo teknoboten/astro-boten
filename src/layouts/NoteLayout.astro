@@ -1,12 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Section from "../components/Section.astro";
-import Heading from "../components/Heading.astro";
+// import Back from "../components/Back.astro";
+// import Heading from "../components/Heading.astro";
 import Tag from "../components/Tag.astro";
 import Sig from "../components/Sig.astro";
-import Back from "../components/Back.astro";
 const { frontmatter } = Astro.props;
+import PageHeader from "../components/PageHeader.astro";
 
+const title = frontmatter.title;
 // make a human readable date
 const date = new Date(frontmatter.pubDate);
 const options = {
@@ -18,11 +20,12 @@ const options = {
 ---
 
 <BaseLayout page="notes">
+  <PageHeader url="/notes" title={title} />
   <Section>
-    <Back url="/notes" />
+    <!-- <Back url="/notes" /> -->
     <div class="allNotes">
       <div>
-        <h3>{frontmatter.title}</h3>
+        <!-- <h3>{frontmatter.title}</h3> -->
         <span>{date.toLocaleDateString("en-us", options)}</span>
       </div>
       <slot />
@@ -41,12 +44,12 @@ const options = {
   </Section>
 </BaseLayout>
 <style>
-  .allNotes {
+  /* .allNotes {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     min-height: 80vh;
-  }
+  } */
   .tag {
     display: inline-block;
   }

@@ -1,24 +1,42 @@
 ---
-const { tag, large } = Astro.props;
+const { tag, size } = Astro.props;
 ---
 
-<a href={`/tags/${tag}`} class={`tag` + (large ? ` large` : ``)}>{tag}</a>
+<!-- <a href={`/tags/${tag}`} class={`tag` + (large ? ` large` : ``)}>{tag}</a> --><!-- {
+  large ? (
+    <a href={`/tags/${tag}`} class="tag large">
+      {tag}
+    </a>
+  ) : (
+    <a href={`/tags/${tag}`} class="tag small">
+      {tag}
+    </a>
+  )
+} -->
+<a href={`/tags/${tag}`} class={`tag ` + size}>{tag}</a>
 
 <style>
   .tag {
-    color: #000;
     text-decoration: none;
     text-transform: lowercase;
-    display: inline-block;
     border: 1px solid #222;
-    margin-right: 0.5em;
     font-family: var(--mono-font);
+    text-align: center;
+    padding: 0 0.2em;
+  }
+  .small {
+    color: #000;
+    display: inline-block;
+    margin-right: 0.2em;
     font-size: 0.9em;
-    padding: 0 0.2em 0;
   }
 
-  .tag.large {
-    font-size: 1.5em;
-    margin-bottom: 0.5em;
+  .large {
+    font-size: 1.3em;
+    margin-bottom: 0.2em;
+  }
+
+  .xl {
+    font-size: 1.6em;
   }
 </style>
