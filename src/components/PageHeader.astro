@@ -1,0 +1,20 @@
+---
+const { url, title } = Astro.props;
+---
+
+<div>
+  <a href={url} class="back">←</a>
+  <h3>{title}</h3>
+</div>
+
+<style>
+  h3 {
+    text-align: center;
+  }
+  .back {
+    font-family: var(--mono-font);
+    font-size: 2em;
+    font-weight: 300;
+    padding: 1em;
+  }
+</style>
