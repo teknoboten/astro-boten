@@ -3,15 +3,17 @@ import Section from "./Section.astro";
 const heart = "<3";
 ---
 
-<section>
+<div>
   <p>Built with {heart} and <a href="http://astro.build">Astro</a> 🚀</p>
   <p>© {new Date().getFullYear()} Serra Boten</p>
-</section>
+</div>
 
 <style>
-  section {
+  div {
     font-family: var(--mono-font);
-    margin-top: 4rem;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 3em 0.2em 0;
+    margin: 0;
   }
 </style>
